@@ -15,10 +15,9 @@ function handleSubmit(event) {
 
     const user = {};
     
-    user.email: email.value,
-    user.password: password.value,
-  };
-  
+  user.email: email.value;
+  user.password: password.value;
+    
     // console.log(`Login: ${email.value}, Password: ${password.value}`);
     console.log(user);  
   
