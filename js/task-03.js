@@ -17,7 +17,7 @@ const makeItemsWithImageMarkUp = image => {
   const { url, alt } = image;
   return `
     <li>
-      <img src="${url}" alt="${alt}">
+      <img src="${url}" alt="${alt}" width=100%>
     </li>
     `;
 };
