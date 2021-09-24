@@ -13,10 +13,11 @@ function handleSubmit(event) {
       return alert("Please fill in all the fields!");
     }
 
-    const user = {
-      email: email.value,
-      password: password.value,
-    }
+    const user = {};
+    
+    user.email: email.value,
+    user.password: password.value,
+  };
   
     // console.log(`Login: ${email.value}, Password: ${password.value}`);
     console.log(user);  
