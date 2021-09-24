@@ -12,3 +12,29 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+const makeItemsWithImageMarkUp = image => {
+  const { url, alt } = image;
+  return `
+    <li>
+      <img src="${url}" alt="${alt}">
+    </li>
+    `;
+};
+
+const listGallery = document.querySelector(".gallery");
+
+const listItemsWithImages = images
+  .map(makeItemsWithImageMarkUp)
+  .join("");
+
+listGallery.insertAdjacentHTML("beforeend", listItemsWithImages);
+
+console.log(listGallery);
+
+// const markup = images
+//   .map((image) => `<li><img src=${image.url} alt=${image.alt}></li>`)
+//   .join("");
+
+// const listGallery = document.querySelector(".gallery");
+// listGallery.insertAdjacentHTML("afterbegin", markup);
