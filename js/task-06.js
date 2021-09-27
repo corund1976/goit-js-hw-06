@@ -1,13 +1,23 @@
-const textInput = document.querySelector('#validation-input');
+const inputText = document.querySelector('#validation-input');
 
-textInput.addEventListener("blur", () => {
-    textInput.classList.remove('valid', 'invalid');
+inputText.addEventListener('blur', onInput);
 
-    if (textInput.value.length === Number(textInput.dataset.length)) {
-        textInput.classList.add('valid');
+function onInput(event) {
+    if (inputText.value.length === Number(inputText.dataset.length)) {
+        inputText.classList.add('valid');
     } else {
-        textInput.classList.add('invalid');
-    }    
-});
+        inputText.classList.add('invalid');
+    }
+};
 
-// вместо + нужно number = приведение Строки к Числу
+// const textInput = document.querySelector('#validation-input');
+
+// textInput.addEventListener("blur", () => {
+//     textInput.classList.remove('valid', 'invalid');
+
+//     if (textInput.value.length === Number(textInput.dataset.length)) {
+//         textInput.classList.add('valid');
+//     } else {
+//         textInput.classList.add('invalid');
+//     }    
+// });

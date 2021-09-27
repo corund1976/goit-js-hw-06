@@ -13,25 +13,61 @@ const images = [
   },
 ];
 
-const makeItemsWithImageMarkUp = image => {
-  const { url, alt } = image;
-  return `
+const listImages = images
+  .map(image => {
+    const { url, alt } = image;
+    return `
     <li>
-      <img src="${url}" alt="${alt}" width=100%>
+      <img src="${url}" alt="${alt}"></img>;
     </li>
     `;
-};
+  })
+  .join('');
 
-const listGallery = document.querySelector(".gallery");
+const gallery = document.querySelector('.gallery');
 
-const listItemsWithImages = images
-  .map(makeItemsWithImageMarkUp)
-  .join("");
+gallery.insertAdjacentHTML('beforeend', listImages);
 
-listGallery.insertAdjacentHTML("beforeend", listItemsWithImages);
+gallery.style.display = "flex";
+// gallery.style.flex-basis = "100% / 3";
 
-console.log(listGallery);
+console.log(gallery);
 
+// const images = [
+//   {
+//     url: 'https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+//     alt: 'White and Black Long Fur Cat',
+//   },
+//   {
+//     url: 'https://images.pexels.com/photos/213399/pexels-photo-213399.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+//     alt: 'Orange and White Koi Fish Near Yellow Koi Fish',
+//   },
+//   {
+//     url: 'https://images.pexels.com/photos/219943/pexels-photo-219943.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+//     alt: 'Group of Horses Running',
+//   },
+// ];
+
+// const makeItemsWithImageMarkUp = image => {
+//   const { url, alt } = image;
+//   return `
+//     <li>
+//       <img src="${url}" alt="${alt}" width=100%>
+//     </li>
+//     `;
+// };
+
+// const listGallery = document.querySelector(".gallery");
+
+// const listItemsWithImages = images
+//   .map(makeItemsWithImageMarkUp)
+//   .join("");
+
+// listGallery.insertAdjacentHTML("beforeend", listItemsWithImages);
+
+// console.log(listGallery);
+
+// ==================================
 // const markup = images
 //   .map((image) => `<li><img src=${image.url} alt=${image.alt}></li>`)
 //   .join("");
